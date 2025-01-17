@@ -1,0 +1,18 @@
+name: Deploy to Netlify
+
+on:
+  push:
+    branches:
+      - main  # Questo può essere un altro branch, se stai usando un branch diverso
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+
+      - name: Trigger deploy on Netlify
+        run: |
+          curl -X POST https://api.netlify.com/build_hooks/678a78dcaaf0510070e4e245
