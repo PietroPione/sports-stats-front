@@ -6,7 +6,8 @@ export default async function Home() {
 
   return (
     <main>
-      <h1>Available Pages</h1>
+      <h1>Sports stats website</h1>
+      <h2>Available Pages</h2>
       <ul>
         {data.map((page) => (
           <li key={page.id}>
