@@ -1,36 +1,19 @@
-"use client";
+import Image from "next/image";
+import Link from "next/link";
+import SportStatsLogo from "@/src/assets/images/SportStatsLogo.png";
 
-import React, { useEffect, useState } from "react";
-import WebsiteSettings from "@/lib/websiteSetting.mjs";
-
-const Header = () => {
-  const [logo, setLogo] = useState(null);
-
-  useEffect(() => {
-    const fetchLogo = async () => {
-      const settings = await getWebsiteSettings();
-      if (settings && settings.logo) {
-        setLogo(settings.logo); // Imposta il logo dallo stato
-      }
-    };
-
-    fetchLogo();
-  }, []);
-
+export default function Header() {
   return (
     <header className="header">
       <div className="logo">
-        {logo ? (
-          <img src={logo} alt="Logo" /> // Usa l'URL del logo recuperato
-        ) : (
-          <p>Logo non disponibile</p> // Messaggio nel caso in cui non ci sia un logo
-        )}
+        <Link href="/">
+          <Image
+            src={SportStatsLogo}
+            alt="Sport Stats Logo"
+            className="h-48 w-48"
+          />
+        </Link>
       </div>
-      <nav className="nav">
-        <ul>{/* Le tue voci di menu */}</ul>
-      </nav>
     </header>
   );
-};
-
-export default Header;
+}
