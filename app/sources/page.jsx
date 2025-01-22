@@ -1,9 +1,9 @@
 import directus from "@/lib/directus.mjs";
-import ResultsTable from "@/components/ResultsTable";
+import SourcesTable from "@/components/SourcesTable";
 
-export default async function ResultsPage() {
+export default async function SourcesPage() {
   // Recupero dei dati direttamente da Directus
-  const { data } = await directus.get("items/results", {
+  const { data } = await directus.get("items/sources", {
     params: {
       sort: "rank", // Ordina i risultati per rank
     },
@@ -15,8 +15,8 @@ export default async function ResultsPage() {
 
   return (
     <main>
-      <h1>Results</h1>
-      <ResultsTable initialData={data} />
+      <h1>Sources</h1>
+      <SourcesTable initialData={data} />
     </main>
   );
 }
