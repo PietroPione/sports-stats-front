@@ -15,6 +15,21 @@ export default async function Home() {
           </li>
         ))}
       </ul>
+
+      <ul className="pt-12">
+        <li>
+          <Link href={"/results"}>Results</Link>
+        </li>
+        <li>
+          <Link href={"/events"}>Events</Link>
+        </li>
+        <li>
+          <Link href={"/registry"}>Registry</Link>
+        </li>
+        <li>
+          <Link href={"/sources"}>Sources</Link>
+        </li>
+      </ul>
     </main>
   );
 }
